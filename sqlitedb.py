@@ -16,8 +16,13 @@ def view_task(not_completed):
         return cursor.fetchall()
 
 
-def history_task():
-    pass
+def history_task(completed_task):
+    with conn:
+        cursor.execute(
+            "SELECT * FROM Task WHERE completed=:completed",
+            {"completed": completed_task},
+        )
+        return cursor.fetchall()
 
 
 def add_task(task_object):
