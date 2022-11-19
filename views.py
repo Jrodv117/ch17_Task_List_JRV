@@ -7,7 +7,6 @@ from main import *
 
 # taskk = delete_task(task1)
 
-
 taskk1 = view_task(0)
 print(taskk1)
 conn.close()
