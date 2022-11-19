@@ -1,5 +1,5 @@
 class Task:
-    def __init__(self, description, completed, ID):
+    def __init__(self, description, completed, ID=0):
         self.description = description
         self.completed = completed
         self.ID = ID
