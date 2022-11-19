@@ -29,7 +29,3 @@ def update_task():
 
 def delete_task():
     pass
-
-
-conn.commit()
-conn.close()
