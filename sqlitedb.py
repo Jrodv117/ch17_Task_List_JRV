@@ -7,7 +7,15 @@ cursor = conn.cursor()
 task1 = Task("Walk Harlee", 0, None)
 
 
-def create_task(task_object):
+def view_task():
+    pass
+
+
+def history_task():
+    pass
+
+
+def add_task(task_object):
     with conn:
         cursor.execute(
             "INSERT INTO Task VALUES (:ID, :description, :completed)",
@@ -19,11 +27,7 @@ def create_task(task_object):
         )
 
 
-def read_task():
-    pass
-
-
-def update_task():
+def complete_task():
     pass
 
 
