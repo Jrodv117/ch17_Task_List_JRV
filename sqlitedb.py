@@ -7,8 +7,12 @@ cursor = conn.cursor()
 task1 = Task("Walk Harlee", 0, None)
 
 
-def view_task():
-    pass
+def view_task(not_complete):
+    with conn:
+        cursor.execute(
+            "SELECT * FROM Task WHERE complete=:complete", {"complete": not_complete}
+        )
+        return cursor.fetchall()
 
 
 def history_task():
