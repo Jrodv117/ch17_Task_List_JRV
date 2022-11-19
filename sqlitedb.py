@@ -27,5 +27,9 @@ def update_task():
     pass
 
 
-def delete_task():
-    pass
+def delete_task(task_object):
+    with conn:
+        cursor.execute(
+            "DELETE from Task WHERE description = :description",
+            {"description": task_object.description},
+        )
