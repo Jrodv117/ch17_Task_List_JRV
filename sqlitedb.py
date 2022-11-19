@@ -19,5 +19,17 @@ def create_task(task_object):
         )
 
 
+def read_task():
+    pass
+
+
+def update_task():
+    pass
+
+
+def delete_task():
+    pass
+
+
 conn.commit()
 conn.close()
