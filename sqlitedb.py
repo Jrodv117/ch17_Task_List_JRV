@@ -7,10 +7,11 @@ cursor = conn.cursor()
 task1 = Task("Walk Harlee", 0, None)
 
 
-def view_task(not_complete):
+def view_task(not_completed):
     with conn:
         cursor.execute(
-            "SELECT * FROM Task WHERE complete=:complete", {"complete": not_complete}
+            "SELECT * FROM Task WHERE completed=:completed",
+            {"completed": not_completed},
         )
         return cursor.fetchall()
 
