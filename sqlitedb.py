@@ -7,13 +7,13 @@ cursor = conn.cursor()
 task1 = Task("Walk Harlee", 0, None)
 
 
-def view_task(not_completed):
+def view_task():
     with conn:
-        cursor.execute(
-            "SELECT * FROM Task WHERE completed=:completed",
-            {"completed": not_completed},
+        query = cursor.execute(
+            "SELECT * FROM Task WHERE completed=0",
         )
-        return cursor.fetchall()
+        for row in query:
+            print(row[0], row[1])
 
 
 def history_task(completed_task):
@@ -37,8 +37,13 @@ def add_task(task_object):
         )
 
 
-def complete_task():
-    pass
+def complete_task(task_object):
+    with conn:
+        cursor.execute(
+            "UPDATE Task SET completed = 0 WHERE taskID=:taskID",
+            {"taskID": task_object},
+        )
+        return cursor.fetchall()
 
 
 def delete_task(task_object):

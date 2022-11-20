@@ -7,9 +7,12 @@ from main import *
 
 # taskk = delete_task(task1)
 
-taskk1 = view_task(0)
-taskk2 = history_task(1)
+view_task()
+# taskk2 = history_task(1)
+hi = complete_task(3)
 
-print(taskk1)
-print(taskk2)
+
+view_task()
+# print(taskk1)
+# print(taskk2)
 conn.close()
