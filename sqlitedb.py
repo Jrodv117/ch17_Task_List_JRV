@@ -1,5 +1,5 @@
 import sqlite3
-from main import *
+from objects import *
 
 conn = sqlite3.connect("task_list_db.sqlite")
 cursor = conn.cursor()
