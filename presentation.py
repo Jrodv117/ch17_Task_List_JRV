@@ -20,7 +20,7 @@ def main():
 
     command_menu()
     command = input("\nCommand: ").lower()
-    while True:
+    while command != "exit":
         if command == "view":
             view_task()
         elif command == "history":
@@ -30,14 +30,15 @@ def main():
             task = Task(description, 0, None)
             add_task(task)
         elif command == "complete":
-            conplete()
+            number = input("Task number to complete: ")
+            complete_task(number)
         elif command == "delete":
-            number = input("Number to delete: ")
+            number = input("Task number to delete: ")
             delete_task(number)
-        elif command == "exit":
             conn.close()
-            print("Bye!")
-            exit()
+        command = input("\nCommand: ").lower()
+    print("Bye!")
+    exit()
 
 
 main()
