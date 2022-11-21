@@ -4,8 +4,6 @@ from main import *
 conn = sqlite3.connect("task_list_db.sqlite")
 cursor = conn.cursor()
 
-task1 = Task("Walk Harlee", 0, None)
-
 
 def view_task():
     with conn:
