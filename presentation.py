@@ -5,7 +5,7 @@ from sqlitedb import *
 
 def command_menu():
     print(
-        """\nCOMMAND MENU
+        """COMMAND MENU
 view          - View pending tasks
 history       - View completed tasks
 add           - Add a task
