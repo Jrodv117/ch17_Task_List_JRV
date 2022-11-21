@@ -6,3 +6,8 @@ class Task:
 
     def __str__(self):
         return f'{self.description} "(Done!)"'
+
+
+# task = Task("h", 0, 0)
+
+# print(task)

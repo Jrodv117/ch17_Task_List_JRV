@@ -18,11 +18,12 @@ def view_task():
 
 def history_task(completed_task):
     with conn:
-        cursor.execute(
+        query = cursor.execute(
             "SELECT * FROM Task WHERE completed=:completed",
             {"completed": completed_task},
         )
-        return cursor.fetchall()
+        for row in query:
+            print(row[0], row[1], "(DONE!)")
 
 
 def add_task(task_object):
