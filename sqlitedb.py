@@ -38,7 +38,7 @@ def add_task(task_object):
 def complete_task(task_number):
     with conn:
         cursor.execute(
-            "UPDATE Task SET completed = 0 WHERE taskID=:taskID",
+            "UPDATE Task SET completed = 1 WHERE taskID=:taskID",
             {"taskID": task_number},
         )
         return cursor.fetchall()
